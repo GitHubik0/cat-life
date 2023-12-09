@@ -2,7 +2,7 @@ import random
 class Cat_life:
     def __init__(self, name):
         self.name = name
-        self.gladness = 100
+        self.gladness = 30
         self.progress = 5
         self.eat = 30
         self.energy = 25
@@ -12,14 +12,14 @@ class Cat_life:
         print('Час для навчання команд')
         self.progress += 15
         self.gladness -= 5
-        self.eat -= 10
-        self.energy -= 30
+        self.eat -= 5
+        self.energy -= 20
 
     def to_sleep(self):
         print('Час для сну')
         self.gladness += 10
-        self.eat -= 20
-        self.energy += 60
+        self.eat -= 15
+        self.energy += 40
 
     def to_chill(self):
         print('Час для відпочинку')
@@ -31,41 +31,41 @@ class Cat_life:
     def to_eat(self):
         print('Час для їжі')
         self.gladness += 10
-        self.eat += 60
+        self.eat += 35
         self.energy += 15
 
     def to_go_walk(self):
         print('Час для прогулянки')
-        self.gladness += 15
-        self.eat += -25
+        self.gladness += 10
+        self.eat += -10
         self.energy += -15
 
     def is_alive(self):
         if self.progress <= -15:
-            print('Йди розвивайся')
+            print('Йди розвивайся!')
             self.alive = False
 
-        elif self.gladness <= -10:
-            print('Упс, в тебе депресія')
+        elif self.gladness <= -15:
+            print('Упс, в тебе депресія.')
             self.alive = False
 
-        elif self.progress >= 500:
+        elif self.progress >= 250:
             print('Молодець, ти став найрозумнішим котом світу!')
             self.alive = False
 
-        elif self.eat <= -15:
-            print('Ти зголоднів')
+        elif self.eat <= -20:
+            print('Ти зголоднів.')
             self.alive = False
 
-        elif self.eat >= 300:
+        elif self.eat >= 250:
             print('Ти став жирним. Тебе здали в притулок >:(')
             self.alive = False
 
-        elif self.energy <= -15:
+        elif self.energy <= -20:
             print('У тебе не було енергії щоб гратися. Твої господарі здали тебе в притулок!')
             self.alive = False
 
-        elif self.energy >= 200:
+        elif self.energy >= 250:
             print('У тебе було забагато енерії. Твої господарі здали тебе в притулок!')
             self.alive = False
 
